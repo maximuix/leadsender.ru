@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Подключение WhatsApp к amoCRM - LeadSender</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css?v=2">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css?v=3">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="icon" href="favicon.svg">
+</head>
+<body id="body">
+    <header id="header">
+        <div class="header__inf d-flex align-items-center d-none d-sm-none d-md-none d-lg-flex d-xl-flex d-xxl-flex" style="width: 100%; height: 32px; background-color: #3BD671;">
+            <div class="container">
+                <div class="header__inf__item  d-flex flex-row align-items-center" style="gap: 24px;">
+                    <div class="header__tel d-flex align-items-center" style="gap: 4px;">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.56657 2.76686L6.07763 2.2558C6.40307 1.93036 6.9307 1.93036 7.25614 2.2558L9.41097 4.41062C9.73639 4.73606 9.73639 5.26369 9.41097 5.58913L7.91729 7.08281C7.66822 7.33188 7.60647 7.71238 7.76399 8.02743C8.67464 9.84871 10.1514 11.3255 11.9726 12.2361C12.2877 12.3936 12.6682 12.3319 12.9173 12.0828L14.411 10.5891C14.7364 10.2637 15.2641 10.2637 15.5895 10.5891L17.7443 12.744C18.0697 13.0694 18.0697 13.597 17.7443 13.9225L17.2332 14.4335C15.4738 16.193 12.6883 16.391 10.6977 14.898L9.69072 14.1427C8.23775 13.053 6.94707 11.7624 5.85736 10.3094L5.1021 9.30238C3.60915 7.31179 3.80711 4.52632 5.56657 2.76686Z" fill="white"/>
+                        </svg>                    
+                        <h6 style="font-size: 16px; font-weight: 400; color: #FFFFFF;">+7 (499) 113-49-34</h6>
+                    </div>
+                    <div class="header__gmail d-flex align-items-center" style="gap: 4px;">
+                        <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.23223 5.39874C2.5 6.13097 2.5 7.30948 2.5 9.6665V11.3332C2.5 13.6902 2.5 14.8687 3.23223 15.6009C3.96447 16.3332 5.14297 16.3332 7.5 16.3332H12.5C14.857 16.3332 16.0355 16.3332 16.7677 15.6009C17.5 14.8687 17.5 13.6902 17.5 11.3332V9.6665C17.5 7.30948 17.5 6.13097 16.7677 5.39874C16.0355 4.6665 14.857 4.6665 12.5 4.6665H7.5C5.14297 4.6665 3.96447 4.6665 3.23223 5.39874ZM5.46225 7.30646C5.07931 7.05117 4.56192 7.15465 4.30663 7.53759C4.05133 7.92053 4.15481 8.43792 4.53775 8.69321L9.0755 11.7183C9.63533 12.0916 10.3647 12.0916 10.9245 11.7183L15.4623 8.69321C15.8452 8.43792 15.9487 7.92053 15.6934 7.53759C15.4381 7.15465 14.9207 7.05117 14.5377 7.30646L10 10.3317L5.46225 7.30646Z" fill="white"/>
+                            </svg>
+                        <h6 style="font-size: 16px; font-weight: 400; color: #FFFFFF;">
+                            <a href="mailto:main@leadsender.ru">main@leadsender.ru</a>
+                        </h6>
+                    </div>
+                    <div class="header__geo d-flex align-items-center" style="gap: 4px;">
+                        <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3315 15.3365C11.5673 14.6955 15.8332 12.1801 15.8332 7.99984C15.8332 4.77818 13.2215 2.1665 9.99984 2.1665C6.77818 2.1665 4.1665 4.77818 4.1665 7.99984C4.1665 12.1801 8.43234 14.6955 9.66817 15.3365C9.87884 15.4458 10.1208 15.4458 10.3315 15.3365ZM9.99984 10.4998C11.3806 10.4998 12.4998 9.38059 12.4998 7.99984C12.4998 6.61913 11.3806 5.49984 9.99984 5.49984C8.61909 5.49984 7.49984 6.61913 7.49984 7.99984C7.49984 9.38059 8.61909 10.4998 9.99984 10.4998Z" fill="white"/>
+                            <path d="M15.0517 14.25C15.5637 14.6301 15.8332 15.0612 15.8332 15.5C15.8332 15.9388 15.5637 16.3699 15.0517 16.75C14.5397 17.1301 13.8033 17.4457 12.9165 17.6651C12.0298 17.8845 11.0238 18 9.99984 18C8.97584 18 7.96995 17.8845 7.08317 17.6651C6.1964 17.4457 5.46 17.1301 4.94802 16.75C4.43604 16.3699 4.1665 15.9388 4.1665 15.5C4.1665 15.0612 4.43604 14.6301 4.94802 14.25" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>                
+                        <h6 style="font-size: 16px; font-weight: 400; color: #FFFFFF;">г. Чебоксары, ул. Афанасьева 8, офис 404</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container d-flex flex-row align-items-center justify-content-between" style=" margin-top: 24px;">
+            <a href="./">
+                <img src="img/logo.svg" alt="лого" class="header__logo" style="width: 12.81vw; height: 3.59vw;">
+            </a>
+            <ul class="nav" style="gap: 16px;">
+                <li class="nav__item"><a class="nav__link"
+                                         style="color: #808080 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;"
+                                         href="#header">Главная</a></li>
+                <li class="nav__item"><a class="nav__link"
+                                         style="color: #808080 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;"
+                                         href="#about">О нас</a></li>
+                <li class="nav__item"><a class="nav__link"
+                                         style="color: #808080 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;"
+                                         target="_blank"
+                                         href="https://documenter.getpostman.com/view/3931169/2s8YYEMPt2">API</a></li>
+                <li class="nav__item"><a class="nav__link"
+                                         style="color: #808080 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;"
+                                         href="#uptime">Uptime</a></li>
+                <li class="nav__item"><a class="nav__link"
+                                         style="color: #808080 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;"
+                                         href="#faq">FAQ</a></li>
+                <li class="nav__item"><a class="nav__link" target="_blank"
+                                         style="color: #808080 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;"
+                                         href="#contacts">Контакты</a>
+                </li>
+            </ul>
+            <div class="header-menu d-flex flex-row align-items-center">
+                <div class="btn-group" style="gap: 16px;">
+    <!--                <a href="https://mailings.laboratorysales.ru/register/">-->
+    <!--                    <button class="btn btn-outline-secondary">-->
+    <!--                        Регистрация-->
+    <!--                    </button>-->
+    <!--                </a>-->
+                    <a href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=c6a731cd-e413-4c0d-ac05-3d6402133199">
+                        <button class="btn btn-secondary">
+                            Попробовать бесплатно
+                        </button>
+                    </a>
+                    
+                </div>
+                <div class="d-block d-md-block d-lg-none d-xl-none d-xxl-none gap-3 menu">
+                    <button id="OpenMenu" class="navbar-toggler" type="button"
+                            aria-controls="offcanvasNavbar">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 9.33334H28" stroke="#3BD671" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M4 16H28" stroke="#3BD671" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M4 22.6667H28" stroke="#3BD671" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+    
+                    </button>
+                    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="true"
+                         tabindex="-1" id="offcanvasNavbar"
+                         style="background-color: #393A3A; width: 70vw; height: 100%;">
+                        <div class="offcanvas-header" style="margin-top: 16px;">
+                            <a href="../">
+                                <img loading="lazy" class="header__logo-item"
+                                     src="img/logoDark.svg"
+                                     alt="Лого" style="max-width: 130px;">
+                            </a>
+                            <button type="button" class="text-reset"
+                                    data-bs-dismiss="offcanvas"
+                                    aria-label="Close" style="background: none; border: none;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 6L6 18" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M6 6L18 18" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <a href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=c6a731cd-e413-4c0d-ac05-3d6402133199">
+                                <button class="btn btn-header-menu" style="color: #3BD671; padding: 0px 0px 0px 0px; font-size: 20px;">
+                                    Попробовать бесплатно
+                                </button>
+                            </a>
+                            <ul class="navbar-nav justify-content-start flex-grow-1 pe-3"
+                                style="gap: 16px; margin-top: 16px;">
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="../#body"
+                                       style="font-size: 20px !important; font-weight: 400; padding: 0px;">Главная</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../#about"
+                                       aria-current="page"
+                                       style="font-size: 20px !important; font-weight: 400; padding: 0px; padding: 0px;">О
+                                        нас</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page"
+                                       href="https://documenter.getpostman.com/view/3931169/2s8YYEMPt2"
+                                       style="font-size: 20px !important; font-weight: 400; padding: 0px;">API</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="../#uptime"
+                                       style="font-size: 20px !important; font-weight: 400; padding: 0px;">Uptime</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="../#faq"
+                                       style="font-size: 20px !important; font-weight: 400; padding: 0px;">FAQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="../#contacts"
+                                       style="font-size: 20px !important; font-weight: 400; padding: 0px;">Контакты</a>
+                                </li>
+                            </ul>
+                            <div class="header__inf__item-menu  d-flex flex-column" style="gap: 8px; margin-top: 24px;">
+                                <div class="header__tel d-flex align-items-center" style="gap: 4px;">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.56657 2.76686L6.07763 2.2558C6.40307 1.93036 6.9307 1.93036 7.25614 2.2558L9.41097 4.41062C9.73639 4.73606 9.73639 5.26369 9.41097 5.58913L7.91729 7.08281C7.66822 7.33188 7.60647 7.71238 7.76399 8.02743C8.67464 9.84871 10.1514 11.3255 11.9726 12.2361C12.2877 12.3936 12.6682 12.3319 12.9173 12.0828L14.411 10.5891C14.7364 10.2637 15.2641 10.2637 15.5895 10.5891L17.7443 12.744C18.0697 13.0694 18.0697 13.597 17.7443 13.9225L17.2332 14.4335C15.4738 16.193 12.6883 16.391 10.6977 14.898L9.69072 14.1427C8.23775 13.053 6.94707 11.7624 5.85736 10.3094L5.1021 9.30238C3.60915 7.31179 3.80711 4.52632 5.56657 2.76686Z" fill="white"/>
+                                    </svg>                    
+                                    <h6 style="font-size: 16px; font-weight: 400; color: #FFFFFF;">+7 499 113 49 34</h6>
+                                </div>
+                                <div class="header__gmail d-flex align-items-center" style="gap: 4px;">
+                                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.23223 5.39874C2.5 6.13097 2.5 7.30948 2.5 9.6665V11.3332C2.5 13.6902 2.5 14.8687 3.23223 15.6009C3.96447 16.3332 5.14297 16.3332 7.5 16.3332H12.5C14.857 16.3332 16.0355 16.3332 16.7677 15.6009C17.5 14.8687 17.5 13.6902 17.5 11.3332V9.6665C17.5 7.30948 17.5 6.13097 16.7677 5.39874C16.0355 4.6665 14.857 4.6665 12.5 4.6665H7.5C5.14297 4.6665 3.96447 4.6665 3.23223 5.39874ZM5.46225 7.30646C5.07931 7.05117 4.56192 7.15465 4.30663 7.53759C4.05133 7.92053 4.15481 8.43792 4.53775 8.69321L9.0755 11.7183C9.63533 12.0916 10.3647 12.0916 10.9245 11.7183L15.4623 8.69321C15.8452 8.43792 15.9487 7.92053 15.6934 7.53759C15.4381 7.15465 14.9207 7.05117 14.5377 7.30646L10 10.3317L5.46225 7.30646Z" fill="white"/>
+                                        </svg>                    
+                                    <h6 style="font-size: 16px; font-weight: 400; color: #FFFFFF;">daretag1617@gmail.com</h6>
+                                </div>
+                                <div class="header__geo d-flex align-items-center" style="gap: 4px;">
+                                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3315 15.3365C11.5673 14.6955 15.8332 12.1801 15.8332 7.99984C15.8332 4.77818 13.2215 2.1665 9.99984 2.1665C6.77818 2.1665 4.1665 4.77818 4.1665 7.99984C4.1665 12.1801 8.43234 14.6955 9.66817 15.3365C9.87884 15.4458 10.1208 15.4458 10.3315 15.3365ZM9.99984 10.4998C11.3806 10.4998 12.4998 9.38059 12.4998 7.99984C12.4998 6.61913 11.3806 5.49984 9.99984 5.49984C8.61909 5.49984 7.49984 6.61913 7.49984 7.99984C7.49984 9.38059 8.61909 10.4998 9.99984 10.4998Z" fill="white"/>
+                                        <path d="M15.0517 14.25C15.5637 14.6301 15.8332 15.0612 15.8332 15.5C15.8332 15.9388 15.5637 16.3699 15.0517 16.75C14.5397 17.1301 13.8033 17.4457 12.9165 17.6651C12.0298 17.8845 11.0238 18 9.99984 18C8.97584 18 7.96995 17.8845 7.08317 17.6651C6.1964 17.4457 5.46 17.1301 4.94802 16.75C4.43604 16.3699 4.1665 15.9388 4.1665 15.5C4.1665 15.0612 4.43604 14.6301 4.94802 14.25" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>                
+                                    <h6 style="font-size: 16px; font-weight: 400; color: #FFFFFF;">г. Чебоксары, ул. Хузангая, д. 36, кв. 169</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let myOffcanvas = document.getElementById('offcanvasNavbar');
+            let bsOffcanvas = new bootstrap.Offcanvas(myOffcanvas);
+            document.getElementById("OpenMenu").addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                bsOffcanvas.toggle();
+            });
+        });
+    </script>
+<main id="main">
+    <div class="container">
+        <h1 style="font-size: 7.03vw; font-family: intro, sans-serif; font-weight: 600; margin-top: 160px;">
+            Lead<span style="color: #3BD671">Sender</span>
+        </h1>
+        <p style="font-size: 1.46vw; margin: 8px 0px 0px 0px; color: #808080;">Стабильная интеграция WhatsApp c amoCRM
+            <br>и шлюз для работы с WhatsApp API</p>
+        <a href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=c6a731cd-e413-4c0d-ac05-3d6402133199">
+            <button class="btn btn-primary btn-main" style="margin-top: 24px;">Попробовать бесплатно</button>
+        </a>
+        <div class="main-img">
+            <img class="main_img__item" src="img/intro-bg.png" alt="иллюстрация"
+                 style="max-width: 655px; float: right; margin-top: -320px">
+        </div>
+    </div>
+    <div class="advantages" style="padding: 72px 0px 72px 0px; margin-top: 230px; transform: rotate(0.01deg);">
+        <div class="container">
+            <div class="advantages__content d-flex flex-row justify-content-between align-items-center w-100">
+                <div class="advantages__item text-center">
+                    <svg class="advantage__icon" width="65" height="64" viewBox="0 0 65 64" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M47.9134 25.3868C48.6793 24.238 48.3689 22.6858 47.2201 21.9199C46.0713 21.154 44.5191 21.4644 43.7532 22.6132L47.9134 25.3868ZM37.7155 36.1765L35.6354 34.7898L35.6353 34.7899L37.7155 36.1765ZM33.1117 35.8899L35.3478 34.7718L35.3477 34.7716L33.1117 35.8899ZM31.8883 33.4435L29.6522 34.5615L29.6523 34.5617L31.8883 33.4435ZM27.2845 33.1568L29.3646 34.5436L29.3647 34.5435L27.2845 33.1568ZM17.0866 43.9466C16.3207 45.0954 16.6311 46.6476 17.7799 47.4134C18.9287 48.1793 20.4809 47.8689 21.2468 46.7201L17.0866 43.9466ZM43.7532 22.6132L35.6354 34.7898L39.7956 37.5633L47.9134 25.3868L43.7532 22.6132ZM35.6353 34.7899C35.6068 34.8325 35.5858 34.8438 35.5742 34.8493C35.5558 34.8581 35.5253 34.8662 35.4865 34.8637C35.4476 34.8613 35.4184 34.8495 35.4011 34.8385C35.3902 34.8316 35.3708 34.8177 35.3478 34.7718L30.8757 37.0079C32.6498 40.5561 37.5951 40.8643 39.7956 37.5632L35.6353 34.7899ZM35.3477 34.7716L34.1242 32.3252L29.6523 34.5617L30.8758 37.0081L35.3477 34.7716ZM34.1243 32.3254C32.3502 28.7772 27.4049 28.469 25.2044 31.7701L29.3647 34.5435C29.3932 34.5008 29.4142 34.4895 29.4258 34.484C29.4442 34.4752 29.4747 34.4672 29.5135 34.4696C29.5524 34.472 29.5816 34.4838 29.5989 34.4948C29.6098 34.5017 29.6292 34.5156 29.6522 34.5615L34.1243 32.3254ZM25.2044 31.77L17.0866 43.9466L21.2468 46.7201L29.3646 34.5436L25.2044 31.77ZM13.8333 10.5H51.1667V5.5H13.8333V10.5ZM51.1667 10.5C52.7315 10.5 54 11.7685 54 13.3333H59C59 9.0071 55.4929 5.5 51.1667 5.5V10.5ZM54 13.3333V50.6667H59V13.3333H54ZM54 50.6667C54 52.2315 52.7315 53.5 51.1667 53.5V58.5C55.4929 58.5 59 54.9929 59 50.6667H54ZM51.1667 53.5H13.8333V58.5H51.1667V53.5ZM13.8333 53.5C12.2685 53.5 11 52.2315 11 50.6667H6C6 54.9929 9.5071 58.5 13.8333 58.5V53.5ZM11 50.6667V13.3333H6V50.6667H11ZM11 13.3333C11 11.7685 12.2685 10.5 13.8333 10.5V5.5C9.5071 5.5 6 9.0071 6 13.3333H11Z"
+                              fill="white"/>
+                    </svg>
+                    <div class="title text-center" style="color: #FFFFFF; margin-top: 24px;">
+                        <h3 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; font-size: 2.34vw; margin-bottom: 0px;">
+                            СТАБИЛЬНО</h3>
+                        <p class="text-center"
+                           style="font-size: 1.17vw; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; margin: 8px 0px 0px 0px;">
+                            Uptime наших серверов 99.9%<br>
+                            Все перезапуски происходят в нерабочее время</p>
+                    </div>
+                </div>
+                <div class="advantages__item text-center">
+                    <svg class="advantage__icon" width="64" height="64" viewBox="0 0 64 64" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M49.8987 12.7696L34.1008 5.99914C32.7592 5.42415 31.2408 5.42415 29.8992 5.99914L14.1013 12.7696C11.9415 13.6952 10.642 15.9253 10.9015 18.2607L12.6384 33.8931C13.1708 38.6851 15.5368 43.0853 19.2408 46.1717L28.5856 53.9592C30.5635 55.6075 33.4366 55.6075 35.4144 53.9592L44.7592 46.1717C48.4632 43.0853 50.8291 38.6851 51.3616 33.8931L53.0987 18.2607C53.3582 15.9253 52.0584 13.6952 49.8987 12.7696Z"
+                              stroke="white" stroke-width="5" stroke-linecap="round"/>
+                    </svg>
+                    <div class="title text-center" style="color: #FFFFFF; margin-top: 24px;">
+                        <h3 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; font-size: 2.34vw; margin-bottom: 0px;">
+                            БЕЗОПАСНО</h3>
+                        <p class="text-center"
+                           style="font-size: 1.17vw; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; margin: 8px 0px 0px 0px;">
+                            Ваш номер надежно защищен при
+                            <br>использовании нашего шлюза WhatsApp API</p>
+                    </div>
+                </div>
+                <div class="advantages__item text-center">
+                    <svg class="advantage__icon" width="65" height="64" viewBox="0 0 65 64" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M55.6821 46.2117C56.6349 42.6557 56.7571 38.9285 56.0389 35.3179C55.3205 31.7072 53.7816 28.3104 51.5405 25.3897C49.2995 22.4691 46.4165 20.1033 43.1149 18.4751C39.8133 16.8469 36.1813 16 32.5 16C28.8187 16 25.1867 16.8469 21.8851 18.4751C18.5834 20.1033 15.7006 22.4691 13.4595 25.3897C11.2185 28.3104 9.67934 31.7072 8.96115 35.3179C8.24296 38.9285 8.36499 42.6557 9.31779 46.2117"
+                              stroke="white" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M34.5423 41.5528C35.8423 43.4443 34.9282 46.3301 32.5004 47.9984C30.073 49.6667 27.0512 49.4856 25.7513 47.5939C24.3659 45.5779 19.5835 34.2424 16.6794 27.2304C16.1325 25.9099 17.7476 24.8 18.7844 25.784C24.2892 31.0088 33.157 39.5368 34.5423 41.5528Z"
+                              stroke="white" stroke-width="5"/>
+                        <path d="M32.5 16V21.3333" stroke="white" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M15.5293 23.0286L19.3005 26.8" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M49.4704 23.0286L45.6992 26.8" stroke="white" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M55.682 46.211L50.5303 44.8307" stroke="white" stroke-width="5"
+                              stroke-linecap="round"/>
+                        <path d="M9.31738 46.211L14.469 44.8307" stroke="white" stroke-width="5"
+                              stroke-linecap="round"/>
+                    </svg>
+                    <div class="title text-center" style="color: #FFFFFF; margin-top: 24px;">
+                        <h3 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; font-size: 2.34vw; margin-bottom: 0px;">
+                            БЫСТРО</h3>
+                        <p class="text-center"
+                           style="font-size: 1.17vw; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; margin: 8px 0px 0px 0px;">
+                            Нагрузка распределена на множество серверов<br>
+                            В день отправляем 10 000 сообщений</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<section id="about">
+    <div class="container" style="padding: 80px 0px 80px 0px">
+        <h2 style="font-size: 4.10vw; color: #333333; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;">
+            Что такое <span style="color: #3BD671;">LeadSender</span></h2>
+        <div class="about" style="margin-top: 40px;">
+            <div class="about__item d-flex flex-row" style="gap: 16px;">
+                <svg class="about__icons" width="48" height="48" viewBox="0 0 48 48" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M24 42C33.9412 42 42 33.9412 42 24C42 14.0589 33.9412 6 24 6C14.0589 6 6 14.0589 6 24C6 33.9412 14.0589 42 24 42ZM33.5364 19.2804C34.2436 18.4318 34.129 17.1707 33.2804 16.4636C32.4318 15.7564 31.1706 15.8711 30.4636 16.7196L23.2676 25.3548C22.5742 26.1868 22.1844 26.6476 21.8732 26.9306L21.8612 26.9414L21.8484 26.9318C21.5128 26.678 21.083 26.2544 20.317 25.4886L17.4142 22.5858C16.6332 21.8048 15.3668 21.8048 14.5858 22.5858C13.8047 23.3668 13.8047 24.6332 14.5858 25.4142L17.4886 28.317L17.5702 28.3986H17.5702C18.2232 29.052 18.8514 29.6804 19.4359 30.1222C20.0906 30.6174 20.948 31.083 22.0468 31.033C23.1456 30.9832 23.9574 30.442 24.5646 29.8896C25.1068 29.3966 25.6754 28.7138 26.2666 28.0042L26.3406 27.9154L33.5364 19.2804Z"
+                          fill="#3BD671"/>
+                </svg>
+                <div class="title">
+                    <h3 style="color: #333333; font-size: 2.34vw;">Используйте мессенджеры для бизнеса</h3>
+                    <p style="color: #808080; font-size: 1.46vw; margin-top: 16px;">LeadSender уже используют для:
+                        переписки
+                        из CRM-систем, записи в салон
+                        <br>красоты, отправки подробностей вакансии или чат-бота с промокодами.</p>
+                </div>
+            </div>
+            <div class="about__item d-flex flex-row" style="gap: 16px;">
+                <svg class="about__icons" width="48" height="48" viewBox="0 0 48 48" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M24 42C33.9412 42 42 33.9412 42 24C42 14.0589 33.9412 6 24 6C14.0589 6 6 14.0589 6 24C6 33.9412 14.0589 42 24 42ZM33.5364 19.2804C34.2436 18.4318 34.129 17.1707 33.2804 16.4636C32.4318 15.7564 31.1706 15.8711 30.4636 16.7196L23.2676 25.3548C22.5742 26.1868 22.1844 26.6476 21.8732 26.9306L21.8612 26.9414L21.8484 26.9318C21.5128 26.678 21.083 26.2544 20.317 25.4886L17.4142 22.5858C16.6332 21.8048 15.3668 21.8048 14.5858 22.5858C13.8047 23.3668 13.8047 24.6332 14.5858 25.4142L17.4886 28.317L17.5702 28.3986H17.5702C18.2232 29.052 18.8514 29.6804 19.4359 30.1222C20.0906 30.6174 20.948 31.083 22.0468 31.033C23.1456 30.9832 23.9574 30.442 24.5646 29.8896C25.1068 29.3966 25.6754 28.7138 26.2666 28.0042L26.3406 27.9154L33.5364 19.2804Z"
+                          fill="#3BD671"/>
+                </svg>
+                <div class="title">
+                    <h3 style="color: #333333; font-size: 2.34vw;">Совершенствуйте коммуникацию
+                        <br>со своей аудиторией</h3>
+                    <p style="color: #808080; font-size: 20px; margin-top: 16px;">LeadSender API предназначен для
+                        создания
+                        чат-ботов, интеграций messengers
+                        <br>с бизнес-системами (CRM, ERP, сайтом).</p>
+                </div>
+            </div>
+            <div class="about__item d-flex flex-row" style="gap: 16px;">
+                <svg class="about__icons" width="48" height="48" viewBox="0 0 48 48" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M24 42C33.9412 42 42 33.9412 42 24C42 14.0589 33.9412 6 24 6C14.0589 6 6 14.0589 6 24C6 33.9412 14.0589 42 24 42ZM33.5364 19.2804C34.2436 18.4318 34.129 17.1707 33.2804 16.4636C32.4318 15.7564 31.1706 15.8711 30.4636 16.7196L23.2676 25.3548C22.5742 26.1868 22.1844 26.6476 21.8732 26.9306L21.8612 26.9414L21.8484 26.9318C21.5128 26.678 21.083 26.2544 20.317 25.4886L17.4142 22.5858C16.6332 21.8048 15.3668 21.8048 14.5858 22.5858C13.8047 23.3668 13.8047 24.6332 14.5858 25.4142L17.4886 28.317L17.5702 28.3986H17.5702C18.2232 29.052 18.8514 29.6804 19.4359 30.1222C20.0906 30.6174 20.948 31.083 22.0468 31.033C23.1456 30.9832 23.9574 30.442 24.5646 29.8896C25.1068 29.3966 25.6754 28.7138 26.2666 28.0042L26.3406 27.9154L33.5364 19.2804Z"
+                          fill="#3BD671"/>
+                </svg>
+                <div class="title">
+                    <h3 style="color: #333333; font-size: 2.34vw;">Рассылки своим клиентам.</h3>
+                    <p style="color: #808080; font-size: 1.46vw; margin-top: 16px;">Возможность использования
+                        брендированных сообщений; Медиа-сообщения
+                        <br>(изображения, файлы, местоположение, аудио, видео, кнопки, ссылки и т.д.)</p>
+                </div>
+            </div>
+            <div class="about__item d-flex flex-row" style="gap: 16px;">
+                <svg class="about__icons" width="48" height="48" viewBox="0 0 48 48" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M24 42C33.9412 42 42 33.9412 42 24C42 14.0589 33.9412 6 24 6C14.0589 6 6 14.0589 6 24C6 33.9412 14.0589 42 24 42ZM33.5364 19.2804C34.2436 18.4318 34.129 17.1707 33.2804 16.4636C32.4318 15.7564 31.1706 15.8711 30.4636 16.7196L23.2676 25.3548C22.5742 26.1868 22.1844 26.6476 21.8732 26.9306L21.8612 26.9414L21.8484 26.9318C21.5128 26.678 21.083 26.2544 20.317 25.4886L17.4142 22.5858C16.6332 21.8048 15.3668 21.8048 14.5858 22.5858C13.8047 23.3668 13.8047 24.6332 14.5858 25.4142L17.4886 28.317L17.5702 28.3986H17.5702C18.2232 29.052 18.8514 29.6804 19.4359 30.1222C20.0906 30.6174 20.948 31.083 22.0468 31.033C23.1456 30.9832 23.9574 30.442 24.5646 29.8896C25.1068 29.3966 25.6754 28.7138 26.2666 28.0042L26.3406 27.9154L33.5364 19.2804Z"
+                          fill="#3BD671"/>
+                </svg>
+                <div class="title">
+                    <h3 style="color: #333333; font-size: 2.34vw;">Более 3 лет</h3>
+                    <p style="color: #808080; font-size: 1.46vw; margin-top: 16px;">Успешной работы в сфере
+                        автоматизации
+                        messengers</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="possibilities" style="padding: 80px 0px 80px 0px;" hidden>
+    <div class="container">
+        <h2 class="text-center"
+            style="font-size: 4.10vw; color: #333333; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;">
+            Возможности <br><span style="color: #3BD671">LeadSender API</span></h2>
+        <div class="cards" style="margin-top: 40px;">
+            <div class="cards__item d-flex flex-row justify-content-center" style="gap: 24px;">
+                <div class="card d-flex align-items-center"
+                     style="padding: 24px 24px 24px 24px; background-color: #FFFFFF; box-shadow: 0px 22px 40px -12px rgba(53, 54, 54, 0.03); border-radius: 12px; border: none !important;">
+                    <img src="/img/icons/device.svg" height="161px" width="161px" alt="device">
+                    <div class="title" style="margin-top: 32px;">
+                        <h2 style="font-size: 2.34vw; color: #333333; text-align: center;">Управление
+                            <br>Устройством</h2>
+                        <div class="title_item d-flex flex-column" style="margin-top: 16px; gap: 8px;">
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">Добавление новых
+                                    устройств</h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">Отображение и передача
+                                    QR
+                                    кода</h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">Получение результатов
+                                    <br>через Webhook</h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">Проверка статуса
+                                    подключения</h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">Сброс и
+                                    переподключение</h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">И другие
+                                    возможности</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card d-flex align-items-center"
+                     style="padding: 24px 24px 24px 24px; background-color: #FFFFFF; box-shadow: 0px 22px 40px -12px rgba(53, 54, 54, 0.03); border-radius: 12px; border: none !important;">
+                    <img src="/img/icons/messages.svg" height="161px" width="161px" alt="device">
+                    <div class="title" style="margin-top: 32px;">
+                        <h2 style="font-size: 2.34vw; color: #333333; text-align: center;">Управление
+                            <br>сообщениями</h2>
+                        <div class="title_item d-flex flex-column" style="margin-top: 16px; gap: 8px;">
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">Проверка новых
+                                    сообщений</h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">Отправка текста</h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">Отправка
+                                    медиафайлов</h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">Прием сообщений и
+                                    медиафайлов</h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">И другие
+                                    возможности</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card d-flex align-items-center"
+                     style="padding: 24px 24px 24px 24px; background-color: #FFFFFF; box-shadow: 0px 22px 40px -12px rgba(53, 54, 54, 0.03); border-radius: 12px; border: none !important;">
+                    <img src="/img/icons/groupchat.svg" height="161px" width="161px" alt="device">
+                    <div class="title" style="margin-top: 32px;">
+                        <h2 style="font-size: 2.34vw; color: #333333; text-align: center;">Управление
+                            <br>группами</h2>
+                        <div class="title_item d-flex flex-column" style="margin-top: 16px; gap: 8px;">
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">Отправка сообщений в
+                                    группы</h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">Прием сообщений и медиа
+                                    <br>из групп</h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">Создание и удаление
+                                    группы</h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">Приглашение
+                                    участников</h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">И другие
+                                    возможности</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="price" style="padding: 80px 0px 80px 0px;">
+    <div class="container">
+        <h2 class="text-center"
+            style="font-size: 4.10vw; color: #333333; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;">
+            Тарифы<br><span style="color: #3BD671">и возможности</span></h2>
+        <div class="cards" style="margin-top: 40px;">
+            <div class="cards__item d-flex flex-row justify-content-center" style="gap: 24px;">
+                <div class="card d-flex align-items-center"
+                     style="padding: 24px 24px 24px 24px; background-color: #FFFFFF; box-shadow: 0px 22px 40px -12px rgba(53, 54, 54, 0.03); border-radius: 12px; border: none !important;">
+                    <div class="title" style="margin-top: 32px;">
+                        <h2 style="font-size: 2.34vw; color: #333333; text-align: center;">Пробный</h2>
+                        <div class="title_item d-flex flex-column" style="margin-top: 16px; gap: 8px;">
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">
+                                    Интеграция с CRM
+                                </h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 32 32"
+                                     fill="none" style="">
+                                    <path d="M17.6126 16.0002L24.4657 9.14687C24.9117 8.70109 24.9117 7.98032 24.4657 7.53453C24.0199 7.08875 23.2992 7.08875 22.8534 7.53453L16.0001 14.3879L9.147 7.53453C8.70102 7.08875 7.98046 7.08875 7.53469 7.53453C7.0887 7.98032 7.0887 8.70109 7.53469 9.14687L14.3878 16.0002L7.53469 22.8536C7.0887 23.2994 7.0887 24.0202 7.53469 24.4659C7.75684 24.6883 8.04895 24.8 8.34084 24.8C8.63274 24.8 8.92464 24.6883 9.147 24.4659L16.0001 17.6126L22.8534 24.4659C23.0758 24.6883 23.3676 24.8 23.6595 24.8C23.9514 24.8 24.2433 24.6883 24.4657 24.4659C24.9117 24.0202 24.9117 23.2994 24.4657 22.8536L17.6126 16.0002Z"
+                                          fill="#F44336"></path>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">
+                                    Нельзя писать первым
+                                </h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 32 32"
+                                     fill="none" style="">
+                                    <path d="M17.6126 16.0002L24.4657 9.14687C24.9117 8.70109 24.9117 7.98032 24.4657 7.53453C24.0199 7.08875 23.2992 7.08875 22.8534 7.53453L16.0001 14.3879L9.147 7.53453C8.70102 7.08875 7.98046 7.08875 7.53469 7.53453C7.0887 7.98032 7.0887 8.70109 7.53469 9.14687L14.3878 16.0002L7.53469 22.8536C7.0887 23.2994 7.0887 24.0202 7.53469 24.4659C7.75684 24.6883 8.04895 24.8 8.34084 24.8C8.63274 24.8 8.92464 24.6883 9.147 24.4659L16.0001 17.6126L22.8534 24.4659C23.0758 24.6883 23.3676 24.8 23.6595 24.8C23.9514 24.8 24.2433 24.6883 24.4657 24.4659C24.9117 24.0202 24.9117 23.2994 24.4657 22.8536L17.6126 16.0002Z"
+                                          fill="#F44336"></path>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">
+                                    Ограничения по размеру файлов
+                                </h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">
+                                    Можно подключить 1 номер
+                                </h5>
+                            </div>
+                        </div>
+                        <h2 style="font-size: 2.34vw; color: #3BD671; text-align: center; margin-top: 30px;">0₽ / 3
+                            дня</h2>
+                    </div>
+                </div>
+                <div class="card d-flex align-items-center"
+                     style="padding: 24px 24px 24px 24px; background-color: #FFFFFF; box-shadow: 0px 22px 40px -12px rgba(53, 54, 54, 0.03); border-radius: 12px; border: none !important;">
+                    <div class="title" style="margin-top: 32px;">
+                        <h2 style="font-size: 2.34vw; color: #333333; text-align: center;">Лайт</h2>
+                        <div class="title_item d-flex flex-column" style="margin-top: 16px; gap: 8px;">
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">
+                                    Интеграция с CRM
+                                </h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">
+                                    Можно писать первым
+                                </h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">
+                                    Нет ограничений по размеру файлов
+                                </h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">
+                                    Можно подключить 1 номер
+                                </h5>
+                            </div>
+                        </div>
+                        <h2 style="font-size: 2.34vw; color: #3BD671; text-align: center; margin-top: 30px;">1500₽ /
+                            мес</h2>
+                    </div>
+                </div>
+                <div class="card d-flex align-items-center"
+                     style="padding: 24px 24px 24px 24px; background-color: #FFFFFF; box-shadow: 0px 22px 40px -12px rgba(53, 54, 54, 0.03); border-radius: 12px; border: none !important;">
+                    <div class="title" style="margin-top: 32px;">
+                        <h2 style="font-size: 2.34vw; color: #333333; text-align: center;">Про</h2>
+                        <div class="title_item d-flex flex-column" style="margin-top: 16px; gap: 8px;">
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">
+                                    Интеграция с CRM
+                                </h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">
+                                    Можно писать первым
+                                </h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">
+                                    Нет ограничений по размеру файлов
+                                </h5>
+                            </div>
+                            <div class="advantage d-flex flex-row gap-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6665 12.1667L7.36075 14.1873C7.71799 14.4553 8.22294 14.394 8.50571 14.0484L15.4998 5.5"
+                                          stroke="#3BD671" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h5 style="font-size: 1.32vw; color: #808080; font-weight: 400;">
+                                    Можно подключить 2 номера
+                                </h5>
+                            </div>
+                        </div>
+                        <h2 style="font-size: 2.34vw; color: #3BD671; text-align: center; margin-top: 30px;">2500₽ /
+                            мес</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="api" style="padding: 80px 0px 80px 0px;" hidden>
+    <div class="container">
+        <h2 class="text-center"
+            style="font-size: 4.10vw; color: #333333; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;">
+            Пример <span style="color: #3BD671;">кода</span></h2>
+        <div class="tabBar d-flex flex-row" style="gap: 16px; margin-top: 40px;">
+            <div class="tab__item tab_active" onclick="selectLanguage('php', this);">
+                <h5 style="font-size: 1.32vw;">PHP</h5>
+            </div>
+            <div class="tab__item" onclick="selectLanguage('js', this);">
+                <h5 style="font-size: 1.32vw;">JS</h5>
+            </div>
+            <div class="tab__item" onclick="selectLanguage('nodejs', this);">
+                <h5 style="font-size: 1.32vw;">NodeJS</h5>
+            </div>
+            <div class="tab__item" onclick="selectLanguage('python', this);">
+                <h5 style="font-size: 1.32vw;">Python</h5>
+            </div>
+        </div>
+        <div class="w-100" style="background: #393A3A; border-radius: 12px; margin-top: 16px; padding: 20px;">
+            <button class="btn-copy" id="btnСopy" data-clipboard-target="#codeBlock" style="float: right;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.5003 2.5H7.50033C5.65938 2.5 4.16699 3.99238 4.16699 5.83333V12.5" stroke="white"/>
+                    <path d="M7.08301 9.58341C7.08301 8.59641 7.08362 7.89101 7.14497 7.34696C7.20535 6.8113 7.32015 6.48384 7.51352 6.23183C7.62436 6.08739 7.75365 5.9581 7.89809 5.84726C8.1501 5.65389 8.47759 5.53909 9.01326 5.47871C9.55726 5.41736 10.2627 5.41675 11.2497 5.41675C12.2367 5.41675 12.9421 5.41736 13.4861 5.47871C14.0218 5.53909 14.3493 5.65389 14.6013 5.84726C14.7457 5.9581 14.875 6.08739 14.9858 6.23183C15.1792 6.48384 15.294 6.8113 15.3544 7.34696C15.4158 7.89101 15.4163 8.59641 15.4163 9.58341V12.9167C15.4163 13.9037 15.4158 14.6092 15.3544 15.1532C15.294 15.6888 15.1792 16.0163 14.9858 16.2683C14.875 16.4127 14.7457 16.5421 14.6013 16.6529C14.3493 16.8462 14.0218 16.9611 13.4861 17.0215C12.9421 17.0828 12.2367 17.0834 11.2497 17.0834C10.2627 17.0834 9.55726 17.0828 9.01326 17.0215C8.47759 16.9611 8.1501 16.8462 7.89809 16.6529C7.75365 16.5421 7.62436 16.4127 7.51352 16.2683C7.32015 16.0163 7.20535 15.6888 7.14497 15.1532C7.08362 14.6092 7.08301 13.9037 7.08301 12.9167V9.58341Z"
+                          stroke="white"/>
+                </svg>
+                Copy!
+            </button>
+            <pre style="margin-bottom: 0;">
+                <code id="codeBlock" class="nohighlight" style="color: #fff;"></code>
+            </pre>
+            =======
+            <button class="btn-copy" id="btnСopy" data-clipboard-target="#codeBlock" style="float: right;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.5003 2.5H7.50033C5.65938 2.5 4.16699 3.99238 4.16699 5.83333V12.5" stroke="white"/>
+                    <path d="M7.08301 9.58341C7.08301 8.59641 7.08362 7.89101 7.14497 7.34696C7.20535 6.8113 7.32015 6.48384 7.51352 6.23183C7.62436 6.08739 7.75365 5.9581 7.89809 5.84726C8.1501 5.65389 8.47759 5.53909 9.01326 5.47871C9.55726 5.41736 10.2627 5.41675 11.2497 5.41675C12.2367 5.41675 12.9421 5.41736 13.4861 5.47871C14.0218 5.53909 14.3493 5.65389 14.6013 5.84726C14.7457 5.9581 14.875 6.08739 14.9858 6.23183C15.1792 6.48384 15.294 6.8113 15.3544 7.34696C15.4158 7.89101 15.4163 8.59641 15.4163 9.58341V12.9167C15.4163 13.9037 15.4158 14.6092 15.3544 15.1532C15.294 15.6888 15.1792 16.0163 14.9858 16.2683C14.875 16.4127 14.7457 16.5421 14.6013 16.6529C14.3493 16.8462 14.0218 16.9611 13.4861 17.0215C12.9421 17.0828 12.2367 17.0834 11.2497 17.0834C10.2627 17.0834 9.55726 17.0828 9.01326 17.0215C8.47759 16.9611 8.1501 16.8462 7.89809 16.6529C7.75365 16.5421 7.62436 16.4127 7.51352 16.2683C7.32015 16.0163 7.20535 15.6888 7.14497 15.1532C7.08362 14.6092 7.08301 13.9037 7.08301 12.9167V9.58341Z"
+                          stroke="white"/>
+                </svg>
+                Copy!
+            </button>
+            <pre style="margin-bottom: 0; overflow-x: hidden;">
+<code id="codeBlock" class="nohighlight" style="color: #fff;"></code>
+</pre>
+        </div>
+    </div>
+</section>
+<section id="uptime" style="padding: 80px 0px 80px 0px;">
+    <div class="container">
+        <h2 class="text-center"
+            style="font-size: 4.10vw; color: #333333; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;">
+            <span style="color: #3BD671;">Uptime</span> наших серверов</h2>
+        <div id="uptime_body" class="uptime_body" style=""></div>
+    </div>
+</section>
+<section id="trialPeriod" style="padding: 80px 0px 80px 0px;">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-2 row-cols-xxl-2">
+            <div class="col order-2 order-sm-2 order-md-2 order-lg-2 order-xl- order-xxl-1">
+                <div class="trialPeriod__video d-flex justify-content-center">
+                    <iframe class="trialPeriod__video-item" width="500" height="281"
+                            src="https://www.youtube.com/embed/vGacf2gdjzY"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col order-1 order-sm-1 order-md-1 order-lg-1 order-xl-2 order-xxl-2">
+                <h2 style="font-size: 4.10vw; color: #333333; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;">
+                    Попробуйте <br>3 дня <span style="color: #3BD671;">бесплатно</span></h2>
+                <h4 style="font-size: 1.46vw; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; color: #808080; font-weight: 400; margin-top: 16px;">
+                    На максимальном тарифе</h4>
+                <a href="https://www.amocrm.ru/oauth/?state=state&mode=popup&client_id=c6a731cd-e413-4c0d-ac05-3d6402133199">
+                    <button class="btn btn-primary" style="margin-top: 24px;">Попробовать бесплатно</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="faq" style="padding: 80px 0px 80px 0px; background-color: #3BD671;">
+    <div class="container">
+        <h2 class="text-center" style="font-size: 4.10vw; color: #FFFFFF;">Часто задаваемые вопросы от клиентов</h2>
+        <div class="accordion accordion-flush d-flex flex-column" id="accordionFlushExample"
+             style="margin-top: 40px; gap: 24px; border-radius: 12px;">
+            <div class="accordion-item" style="border-radius: 12px !important;">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne"
+                            style="font-size: 2.34vw; color: #333333; font-weight: 500; border-radius: 12px !important; box-shadow: 0px 24px 40px rgba(53, 54, 54, 0.05) !important;">
+                        Что такое LeadSender?
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                     data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"><p
+                            style="font-size: 1.46vw; color: #808080; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; margin-bottom: 0px;">
+                        Простая интеграция WhatsApp с amoCRM.
+                        Подключение за 48 секунд без разработчиков и черной магии.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item"
+                 style="border-radius: 12px !important; box-shadow: 0px 24px 40px rgba(53, 54, 54, 0.05) !important;">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo"
+                            style="font-size: 2.34vw; color: #333333; font-weight: 500; border-radius: 12px !important; box-shadow: 0px 24px 40px rgba(53, 54, 54, 0.05) !important;">
+                        Можно ли использовать LeadSender, если у меня много менеджеров?
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                     data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"><p
+                            style="font-size: 1.46vw; color: #808080; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; margin-bottom: 0px;">
+                        Да, без проблем. Можно пересадить всех продавцов на один канал, а можно каждому сделать
+                        отдельный.
+                        Если у вас крупная компания, оставьте заявку, и мы расскажем, чем можем помочь.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item" style="border-radius: 12px !important;" hidden>
+                <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseThree" aria-expanded="false"
+                            aria-controls="flush-collapseThree"
+                            style="font-size: 2.34vw; color: #333333; font-weight: 500; border-radius: 12px !important; box-shadow: 0px 24px 40px rgba(53, 54, 54, 0.05) !important;">
+                        Можно ли получить бан за использование сервиса?
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                     data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"><p
+                            style="font-size: 1.46vw; color: #808080; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; margin-bottom: 0px;">
+                        Placeholder content for this accordion, which is intended to demonstrate
+                        theclass. This is the first item's accordion body.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item" style="border-radius: 12px !important;" hidden>
+                <h2 class="accordion-header" id="flush-headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseFour" aria-expanded="false"
+                            aria-controls="flush-collapseFour"
+                            style="font-size: 2.34vw; color: #333333; font-weight: 500; border-radius: 12px !important; box-shadow: 0px 24px 40px rgba(53, 54, 54, 0.05) !important;">
+                        Можно ли производить массовые рассылки?
+                    </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
+                     data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"><p
+                            style="font-size: 1.46vw; color: #808080; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; margin-bottom: 0px;">
+                        Placeholder content for this accordion, which is intended to demonstrate
+                        theclass. This is the first item's accordion body.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item" style="border-radius: 12px !important;">
+                <h2 class="accordion-header" id="flush-headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseFive" aria-expanded="false"
+                            aria-controls="flush-collapseFive"
+                            style="font-size: 2.34vw; color: #333333; font-weight: 500; border-radius: 12px !important; box-shadow: 0px 24px 40px rgba(53, 54, 54, 0.05) !important;">
+                        А рассылки делать можно?
+                    </button>
+                </h2>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
+                     data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"><p
+                            style="font-size: 1.46vw; color: #808080; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; margin-bottom: 0px;">
+                        Можно, для этого отлично подходит WhatsApp Business API. Вы сможете без ограничений отправлять
+                        рассылки, а также вставлять в сообщения кнопки, чтобы поднять конверсию.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contacts" style="padding: 80px 0px 80px 0px;">
+    <div class="container">
+        <h2 class="text-center"
+            style="font-size: 4.10vw; color: #333333; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;">
+            Есть вопрос? <span style="color: #3BD671;">Свяжитесь с нами!</span></h2>
+        <p style="font-size: 1.46vw; color: #808080; text-align: center; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; margin-top: 16px; word-wrap: break-word;">
+            Мы всегда прислушиваемся к своим клиентам. Вот почему LeadSender удобен и прост в использовании.
+            <br>Если у вас имеются какие-либо пожелания - обращайтесь к нам! Таким образом вы поможете развить этот
+            сервис.</p>
+        <div class="contacts__button d-flex justify-content-center" style="margin-top: 24px;">
+            <a href="https://leadsender.ru/support">
+                <button class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.56657 2.76686L6.07763 2.2558C6.40307 1.93036 6.9307 1.93036 7.25614 2.2558L9.41097 4.41062C9.73639 4.73606 9.73639 5.26369 9.41097 5.58913L7.91729 7.08281C7.66822 7.33188 7.60647 7.71238 7.76399 8.02743C8.67464 9.84871 10.1514 11.3255 11.9726 12.2361C12.2877 12.3936 12.6682 12.3319 12.9173 12.0828L14.411 10.5891C14.7364 10.2637 15.2641 10.2637 15.5895 10.5891L17.7443 12.744C18.0697 13.0694 18.0697 13.597 17.7443 13.9225L17.2332 14.4335C15.4738 16.193 12.6883 16.391 10.6977 14.898L9.69072 14.1427C8.23775 13.053 6.94707 11.7624 5.85736 10.3094L5.1021 9.30238C3.60915 7.31179 3.80711 4.52632 5.56657 2.76686Z"
+                              fill="white"/>
+                    </svg>
+                    Связаться с нами
+                </button>
+            </a>
+        </div>
+    </div>
+</section>
+<footer id="footer" style="background-color: #393A3A; padding-top: 40px;">
+    <div class="container">
+        <div class="row row-cols-2" style="justify-content: space-between;">
+            <div class="col-12">
+                <a href="./">
+                    <img class="footer__logo" src="img/logoDark.svg" alt="логотип"
+                         style="width: 12.81vw; height: 3.59vw;">
+                </a>
+            </div>
+            <div class="col-12" style="margin-top: 24px;">
+                <div class="footer__item d-flex flex-row" style="gap: 48px;">
+                    <div class="footer__nav">
+                        <h3 style="font-size: 1.76vw; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; color: #FFFFFF;">
+                            Навигация</h3>
+                        <ul class="nav__footer d-flex flex-column"
+                            style="gap: 4px; margin-top: 12px; padding-left: 0px !important;">
+                            <li class="nav__item"><a class="nav__link" href="#header"
+                                                     style="font-size: 1.32vw; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; color: #FFFFFF; font-weight: 400;">Главная</a>
+                            </li>
+                            <li class="nav__item"><a class="nav__link" href="#about"
+                                                     style="font-size: 1.32vw; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; color: #FFFFFF; font-weight: 400;">О
+                                нас</a></li>
+                            <li class="nav__item"><a class="nav__link"
+                                                     href="https://documenter.getpostman.com/view/3931169/2s8YYEMPt2"
+                                                     target="_blank"
+                                                     style="font-size: 1.32vw; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; color: #FFFFFF; font-weight: 400;">API</a>
+                            </li>
+                            <li class="nav__item"><a class="nav__link" href="#uptime"
+                                                     style="font-size: 1.32vw; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; color: #FFFFFF; font-weight: 400;">Uptime</a>
+                            </li>
+                            <li class="nav__item"><a class="nav__link" href="#faq"
+                                                     style="font-size: 1.32vw; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; color: #FFFFFF; font-weight: 400;">FAQ</a>
+                            </li>
+                            <li class="nav__item"><a class="nav__link" href="#contacts"
+                                                     style="font-size: 1.32vw; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; color: #FFFFFF; font-weight: 400;">Контакты</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav">
+                        <h3 style="font-size: 1.76vw; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; color: #FFFFFF;">
+                            Полезные ссылки</h3>
+                        <ul class="nav__footer d-flex flex-column"
+                            style="gap: 4px; margin-top: 12px; padding-left: 0px !important;">
+                            <li class="nav__item" hidden>
+                                <a class="nav__link" href="#uptime"
+                                   style="font-size: 18px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; color: #FFFFFF; font-weight: 400;">Uptime</a>
+                            </li>
+                            <li class="nav__item" hidden>
+                                <a class="nav__link nav__footer__link" href="#"
+                                   style="font-size: 18px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; color: #FFFFFF; font-weight: 400;">
+                                    Партнерам</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="./policy.html" target="_blank"
+                                   style="font-size: 18px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; color: #FFFFFF; font-weight: 400;">Политика
+                                    конфиденциальности</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="./use.html" target="_blank"
+                                   style="font-size: 18px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; color: #FFFFFF; font-weight: 400;">Пользовательское
+                                    соглашение</a>
+                            </li>
+                            <li class="nav__item" hidden>
+                                <a class="nav__link" href="#"
+                                   style="font-size: 18px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; color: #FFFFFF; font-weight: 400;">Партнерское
+                                    соглашение</a>
+                            </li>
+
+                            <li class="nav__item">
+                                <a class="nav__link" href="./return-policy.html" target="_blank"
+                                   style="font-size: 18px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; color: #FFFFFF; font-weight: 400;">Условия возврата</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__contact">
+                        <h3 style="font-size: 1.76vw; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; color: #FFFFFF;">
+                            Контакты</h3>
+                        <div class="contact d-flex flex-column" style="gap: 8px; margin-top: 12px;">
+                            <div class="contact__item d-flex flex-row" style="gap: 4px;">
+                                <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M2.511 8.12591C2.5 8.57502 2.5 9.08492 2.5 9.6665V11.3332C2.5 13.6902 2.5 14.8687 3.23223 15.6009C3.96447 16.3332 5.14298 16.3332 7.5 16.3332H12.5C14.857 16.3332 16.0355 16.3332 16.7677 15.6009C17.5 14.8687 17.5 13.6902 17.5 11.3332V9.6665C17.5 9.08492 17.5 8.57502 17.489 8.12591L10.8094 11.8368C10.306 12.1164 9.694 12.1164 9.19058 11.8368L2.511 8.12591ZM2.70247 6.35793C2.77153 6.37527 2.8395 6.40181 2.9047 6.43804L10 10.3798L17.0953 6.43804C17.1605 6.40181 17.2285 6.37527 17.2975 6.35793C17.1892 5.96333 17.023 5.65393 16.7677 5.39874C16.0355 4.6665 14.857 4.6665 12.5 4.6665H7.5C5.14298 4.6665 3.96447 4.6665 3.23223 5.39874C2.97704 5.65393 2.81078 5.96333 2.70247 6.35793Z"
+                                          fill="white"/>
+                                </svg>
+                                <h5 style="font-size: 1.17vw; font-weight: 400; color: #FFFFFF;">
+                                    <a href="mailto:main@leadsender.ru">main@leadsender.ru</a>
+                                </h5>
+                            </div>
+                            <div class="contact__item d-flex flex-row" style="gap: 4px;">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.56657 2.76686L6.07763 2.2558C6.40307 1.93036 6.9307 1.93036 7.25614 2.2558L9.41097 4.41062C9.73639 4.73606 9.73639 5.26369 9.41097 5.58913L7.91729 7.08281C7.66822 7.33188 7.60647 7.71238 7.76399 8.02743C8.67464 9.84871 10.1514 11.3255 11.9726 12.2361C12.2877 12.3936 12.6682 12.3319 12.9173 12.0828L14.411 10.5891C14.7364 10.2637 15.2641 10.2637 15.5895 10.5891L17.7443 12.744C18.0697 13.0694 18.0697 13.597 17.7443 13.9225L17.2332 14.4335C15.4738 16.193 12.6883 16.391 10.6977 14.898L9.69072 14.1427C8.23775 13.053 6.94707 11.7624 5.85736 10.3094L5.1021 9.30238C3.60915 7.31179 3.80711 4.52632 5.56657 2.76686Z"
+                                          fill="white"/>
+                                </svg>
+                                <h5 style="font-size: 1.17vw; font-weight: 400; color: #FFFFFF;">
+                                    <a href="tel:+7(908)300-35-91">+7 (499) 113-49-34</a>
+                                </h5>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="footer__social-networking">
+                        <h3 style="font-size: 1.76vw; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important; color: #FFFFFF;">
+                            Соц сети</h3>
+                        <div class="social-networking__item d-flex flex-row" style="gap: 8px; margin-top: 12px;">
+                            <a href="https://vk.com/leadsender" target="_blank">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="32" height="32" rx="16" fill="#256FFF"/>
+                                    <g clip-path="url(#clip0_230_14)">
+                                        <path d="M25.894 20.8053C25.8698 20.7531 25.8472 20.7098 25.8262 20.6751C25.4792 20.0502 24.8161 19.2831 23.8373 18.3736L23.8166 18.3528L23.8063 18.3426L23.7958 18.3321H23.7853C23.341 17.9087 23.0597 17.6239 22.9419 17.4781C22.7264 17.2004 22.6781 16.9193 22.7959 16.6345C22.8791 16.4193 23.1918 15.9649 23.7331 15.2706C24.0178 14.9026 24.2433 14.6077 24.4099 14.3855C25.611 12.7887 26.1317 11.7684 25.9719 11.324L25.9099 11.2202C25.8682 11.1577 25.7606 11.1005 25.5872 11.0483C25.4135 10.9963 25.1914 10.9877 24.9206 11.0223L21.9217 11.0431C21.8731 11.0258 21.8037 11.0275 21.7134 11.0483C21.6231 11.0692 21.5779 11.0796 21.5779 11.0796L21.5257 11.1057L21.4843 11.1371C21.4496 11.1578 21.4114 11.1942 21.3697 11.2463C21.3282 11.2982 21.2936 11.3591 21.2658 11.4285C20.9393 12.2685 20.5681 13.0495 20.1515 13.7714C19.8946 14.2019 19.6587 14.575 19.4433 14.8909C19.2281 15.2067 19.0476 15.4393 18.9019 15.5885C18.756 15.7377 18.6244 15.8573 18.5061 15.9477C18.3881 16.038 18.298 16.0762 18.2355 16.0623C18.173 16.0483 18.1141 16.0344 18.0583 16.0206C17.9612 15.9581 17.8831 15.873 17.8242 15.7655C17.765 15.6579 17.7252 15.5224 17.7044 15.3593C17.6836 15.196 17.6714 15.0556 17.6679 14.9376C17.6646 14.8196 17.6661 14.6529 17.6732 14.4377C17.6804 14.2224 17.6836 14.0767 17.6836 14.0003C17.6836 13.7365 17.6888 13.4501 17.6991 13.1412C17.7096 12.8323 17.7181 12.5875 17.7252 12.4072C17.7323 12.2267 17.7356 12.0357 17.7356 11.8344C17.7356 11.6331 17.7233 11.4752 17.6991 11.3606C17.6752 11.2461 17.6385 11.135 17.5901 11.0273C17.5414 10.9197 17.4701 10.8365 17.3766 10.7774C17.2829 10.7184 17.1664 10.6716 17.0278 10.6368C16.6598 10.5535 16.1912 10.5085 15.6219 10.5015C14.3307 10.4876 13.501 10.571 13.1331 10.7515C12.9873 10.8278 12.8554 10.932 12.7375 11.0638C12.6125 11.2166 12.595 11.2999 12.6853 11.3137C13.1019 11.3761 13.3968 11.5253 13.5703 11.7614L13.6329 11.8864C13.6816 11.9766 13.7301 12.1364 13.7788 12.3654C13.8273 12.5945 13.8586 12.8479 13.8724 13.1254C13.9071 13.6323 13.9071 14.0662 13.8724 14.4271C13.8377 14.7882 13.8048 15.0693 13.7735 15.2706C13.7422 15.4719 13.6953 15.6351 13.6329 15.76C13.5703 15.8849 13.5287 15.9613 13.5079 15.989C13.487 16.0167 13.4697 16.0342 13.4559 16.0411C13.3657 16.0757 13.2718 16.0933 13.1747 16.0933C13.0774 16.0933 12.9595 16.0446 12.8207 15.9474C12.6819 15.8501 12.5378 15.7166 12.3886 15.5465C12.2393 15.3763 12.0709 15.1386 11.8834 14.8331C11.6961 14.5277 11.5017 14.1668 11.3003 13.7502L11.1338 13.4482C11.0296 13.2538 10.8874 12.9709 10.7069 12.5996C10.5263 12.2281 10.3666 11.8688 10.2279 11.5217C10.1724 11.3759 10.089 11.2649 9.97799 11.1885L9.92587 11.1572C9.89122 11.1295 9.8356 11.1 9.7593 11.0687C9.68289 11.0373 9.60316 11.0149 9.51978 11.001L6.66657 11.0218C6.37501 11.0218 6.17718 11.0878 6.07302 11.2197L6.03133 11.2821C6.0105 11.3169 6 11.3724 6 11.4488C6 11.5252 6.02083 11.6189 6.06251 11.7299C6.47903 12.7088 6.93198 13.6529 7.42137 14.5623C7.91076 15.4717 8.33603 16.2043 8.69692 16.7593C9.05789 17.3148 9.42583 17.839 9.80073 18.3317C10.1756 18.8247 10.4238 19.1405 10.5452 19.2793C10.6668 19.4184 10.7623 19.5223 10.8317 19.5917L11.092 19.8416C11.2586 20.0082 11.5033 20.2078 11.8261 20.4403C12.149 20.673 12.5065 20.902 12.8987 21.1278C13.291 21.3533 13.7474 21.5372 14.2681 21.6795C14.7887 21.8219 15.2955 21.8791 15.7884 21.8515H16.986C17.2288 21.8305 17.4128 21.7542 17.5379 21.6224L17.5793 21.5702C17.6072 21.5287 17.6333 21.4644 17.6573 21.3777C17.6817 21.291 17.6938 21.1954 17.6938 21.0914C17.6867 20.7929 17.7094 20.5239 17.7614 20.2845C17.8133 20.0451 17.8724 19.8646 17.9386 19.743C18.0047 19.6215 18.0793 19.5191 18.1624 19.436C18.2456 19.3527 18.3049 19.3023 18.3397 19.2849C18.3743 19.2674 18.4019 19.2556 18.4227 19.2485C18.5893 19.193 18.7854 19.2467 19.0112 19.41C19.2369 19.5731 19.4486 19.7746 19.6465 20.014C19.8444 20.2536 20.0821 20.5225 20.3597 20.8209C20.6376 21.1195 20.8805 21.3414 21.0886 21.4874L21.2968 21.6124C21.4359 21.6957 21.6164 21.7721 21.8386 21.8415C22.0604 21.9109 22.2547 21.9283 22.4215 21.8936L25.0872 21.852C25.3509 21.852 25.556 21.8083 25.7015 21.7217C25.8474 21.6349 25.934 21.5393 25.9619 21.4354C25.9898 21.3313 25.9913 21.2132 25.9672 21.0811C25.9425 20.9494 25.9182 20.8573 25.894 20.8053Z"
+                                              fill="white"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_230_14">
+                                            <rect width="20" height="20" fill="white" transform="translate(6 6)"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+                            <a href="https://t.me/leadsender" target="_blank">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="32" height="32" rx="16" fill="#40B3E0"/>
+                                    <path d="M14.1499 21.5416L14.3832 18.0166L20.7832 12.2499C21.0666 11.9916 20.7249 11.8666 20.3499 12.0916L12.4499 17.0832L9.03324 15.9999C8.2999 15.7916 8.29157 15.2832 9.1999 14.9166L22.5082 9.78322C23.1166 9.50822 23.6999 9.93323 23.4666 10.8666L21.1999 21.5416C21.0416 22.2999 20.5832 22.4832 19.9499 22.1332L16.4999 19.5832L14.8416 21.1916C14.6499 21.3832 14.4916 21.5416 14.1499 21.5416Z"
+                                          fill="white"/>
+                                </svg>
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12" style="margin-top: 12px;">
+                <hr style="color: #FFFFFF; height: 2px; border-radius: 120px;">
+                <div class="allRights row justify-content-between" style="padding-top: 10px; padding-bottom: 24px;">
+                    <div class="col" style="margin: auto;">
+                        <h6 class="allRights__item" style="font-size: 1.17vw; color: #FFFFFF; font-weight: 400;">© 2022
+                            LeadSender ИНН: 213003977786 ОГРНИП: 322213000021825</h6>
+                    </div>
+                    <div class="col-auto row">
+                        <div class="col"><img src="https://green-api.com/assets/pay/1.png" height="30px" alt="#"></div>
+                        <div class="col"><img src="https://green-api.com/assets/pay/2.png" height="30px" alt="#"></div>
+                        <div class="col"><img src="https://green-api.com/assets/pay/3.png" height="30px" alt="#"></div>
+                        <div class="col"><img src="https://green-api.com/assets/pay/4.png" height="30px" alt="#"></div>
+                        <div class="col"><img src="https://green-api.com/assets/pay/5.png" height="30px" alt="#"></div>
+                        <div class="col"><img src="https://green-api.com/assets/pay/6.png" height="30px" alt="#"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<div style="z-index: 9999; position: fixed;">
+    <style>
+        .wrapper {
+            position: fixed;
+            border-radius: 50%;
+            cursor: pointer;
+            background: #25D366;
+            border: 2px solid #21B659;
+            box-sizing: border-box;
+            box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+        }
+
+        .wa-logo {
+            pointer-events: none;
+            background: center / 60% no-repeat url('https://button.wtrg.io/dist/img/WhatsAppLogo.svg');
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <div class="wrapper" style="border-width: 2px; right: 90px; bottom: 90px;">
+        <a id="whatsapp_button" href="#" target="_blank">
+            <div class="wa-logo">
+                <div class="pulse" style="width: 50px; height: 50px; background-color: #ffffff00;"></div>
+            </div>
+        </a>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css">
+ <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script src="js/index.js"></script>
+<script src="js/clipboard.min.js"></script>
+<script>
+    new Clipboard('.btn-copy');
+</script>
+<script>
+    let phone = '74991134934';
+    let text = 'Здравствуйте, пишу из сайта.';
+    let params = `accountid=29002462`
+        + `&lead[709743]=` + new Date().getTime();
+        // + `&pipeline_id=` + '5268043'
+        // + `&status_id=` + '47069989'
+        // + `&responsible_user_id=` + '8177122';
+    document.getElementById('whatsapp_button').href = `https://leadsender.ru/wa.me/?phone=${phone}&text=${text}&${params}`;
+</script>
+</body>
+</html>

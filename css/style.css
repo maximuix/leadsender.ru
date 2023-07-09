@@ -1,0 +1,1259 @@
+body {
+    background: radial-gradient(28.7% 32.21% at 97.19% 3.03%, rgba(59, 214, 113, 0.13) 0%, rgba(59, 214, 113, 0) 50%), #F8F9FC;
+}
+
+/* кнопки */
+
+.btn-secondary {
+    font-size: 18px !important;
+    padding: 10px 30px 10px 30px !important;
+    background-color: #3BD671 !important;
+    border: none !important;
+    border-radius: 12px !important;
+}
+
+.btn-outline-secondary {
+    font-size: 18px !important;
+    padding: 10px 30px 10px 30px !important;
+    border: 1px solid #3BD671;
+    color: #3BD671 !important;
+    border-radius: 12px !important;
+}
+
+.btn-primary {
+    font-size: 18px !important;
+    padding: 0px 30px 0px 30px !important;
+    background-color: #3BD671 !important;
+    border: none !important;
+    border-radius: 12px !important;
+    height: 62px !important;
+    box-shadow: 0px 22px 40px rgba(22, 205, 99, 0.18);
+}
+
+.btn-copy {
+    font-size: 16px;
+    padding: 12px 20px 12px 20px;
+    border: none;
+    background: rgba(59, 214, 113, 0.7);
+    color: #FFFFFF;
+    border-radius: 4px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.advantages {
+    background: url("../img/bg__advantages.svg") no-repeat;
+    background-size: 100%;
+}
+
+/* ховеры */
+
+.nav__link:hover {
+    opacity: 0.7 !important;
+    transition: color 0.3s linear !important;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #3BD671 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #3BD671 !important;
+    transition: color 0.3s linear, border-color 0.3s linear, background-color 0.3s linear;
+}
+
+.btn-secondary:hover {
+    background-color: #2FAB5A !important;
+    transition: color 0.3s linear, border-color 0.3s linear, background-color 0.3s linear;
+}
+
+.btn-primary:hover {
+    background-color: #2FAB5A !important;
+    transition: color 0.3s linear, border-color 0.3s linear, background-color 0.3s linear;
+}
+
+.tab__item:hover {
+    background-color: #e0e0e0;
+    transition: color 0.1s linear, border-color 0.3s linear, background-color 0.3s linear;
+}
+
+.tab_active:hover {
+    background-color: #3BD671 !important;
+}
+
+.btn-copy:hover {
+    background-color: #3bd6716b !important;
+    transition: color 0.1s linear, border-color 0.3s linear, background-color 0.3s linear;
+}
+
+.nav__link {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+.uptime_body {
+    margin-top: 62px;
+    padding: 56px 32px;
+    background: #FFFFFF;
+    box-shadow: 0px 24px 40px rgba(53, 54, 54, 0.05);
+    border-radius: 12px;
+}
+
+.uptime_elem_title {
+    font-weight: 500;
+    font-size: 32px;
+    margin: auto 0;
+}
+
+.uptime_day_status {
+    width: 8px;
+    height: 32px;
+    background: #687790;
+    border-radius: 12px;
+    margin: auto;
+}
+
+.uptime_day_status:first-child {
+    margin-left: 0;
+}
+
+.uptime_day_status:last-child {
+    margin-right: 0;
+}
+
+.uptime_day_hover_element {
+    position: absolute;
+    text-align: center;
+    display: none;
+    margin-left: 4px;
+    transform: translate(-50%, -95%);
+}
+
+.uptime_day_status:hover .uptime_day_hover_element {
+    display: block;
+}
+
+.uptime_server {
+    padding-bottom: 48px;
+}
+
+.uptime_server:last-child {
+    padding-bottom: 0px;
+}
+
+.tab__item {
+    padding: 12px 24px 12px 24px;
+    background: #eaeaea;
+    cursor: pointer;
+    width: auto;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #333333;
+}
+
+.tab_active {
+    background: #3BD671;
+    color: #FFFFFF;
+    padding: 12px 24px 12px 24px;
+}
+
+/* аккордеон */
+
+.accordion-button::after {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    margin-left: auto;
+    background-image: url(../img/icons/Add_round_fill\ 1.svg) !important;
+    background-repeat: no-repeat;
+    background-size: 48px;
+    transition: transform .2s ease-in-out;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #dbffe7b0 !important;
+    box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+}
+
+/* скроллбар */
+
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F8F9FC;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #E3E3E3;
+    border-radius: 120px;
+    height: 125px;
+}
+
+.pulse {
+    margin: auto;
+    display: block;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #3BD671;
+    box-shadow: 0 0 0 rgba(59, 214, 113, 0.4);
+    animation: pulse 2s infinite;
+}
+.pulse:hover {
+    animation: none;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-box-shadow: 0 0 0 0 rgba(59, 214, 113, 0.4);
+    }
+    70% {
+        -webkit-box-shadow: 0 0 0 10px rgba(59, 214, 113, 0);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba(59, 214, 113, 0);
+    }
+}
+@keyframes pulse {
+    0% {
+        -moz-box-shadow: 0 0 0 0 rgba(59, 214, 113, 0.4);
+        box-shadow: 0 0 0 0 rgba(59, 214, 113, 0.4);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+        box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+        box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    }
+}
+
+/* адаптивы */
+
+@media screen and (max-width: 991.98px) {
+    
+    .btn-primary {
+        font-size: 16px !important;
+    }
+
+    .header__logo {
+        width: 17.64vw !important;
+        height: 6.12vw !important;
+    }
+
+    .nav {
+        display: none !important;
+    }
+
+    .btn-group__menu{
+        display: none !important;
+    }
+
+    #main h1 {
+        font-size: 9.68vw !important;
+        text-align: center;
+        margin-top: 60px !important;
+    }
+
+    #main p {
+        font-size: 2.02vw !important;
+        text-align: center;
+        margin-bottom: 24px !important;
+    }
+
+    .btn-main {
+        margin: 0 auto !important;
+        display: block !important;
+    }
+
+    .main-img {
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    .main_img__item {
+        margin-top: 40px !important;
+        float: none !important;
+        position: absolute !important;
+        width: 50.66vw;
+
+    }
+
+    .advantages {
+        background: url("../img/bg__tablet-large.svg") no-repeat;
+        margin-top: 350px !important;
+    }
+
+    .advantages h3 {
+        font-size: 3.23vw !important;
+    }
+
+    .advantages p {
+        font-size: 2.08vw !important;
+    }
+
+    .advantage__icon {
+        width: 56px !important;
+        height: 56px !important;
+    }
+
+    #about .container {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #about h2 {
+        font-size: 5.65vw !important;
+        text-align: center !important;
+    }
+
+    .about__icons {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .about__item h3 {
+        font-size: 3.23vw !important;
+    }
+
+    .about__item p {
+        font-size: 2.02vw !important;
+        margin-top: 8px !important;
+        
+    }
+
+    #possibilities {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #price h2 {
+        font-size:  5.65vw !important;
+    }
+
+    .cards__item {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+
+    .card {
+        height: auto !important;
+    }
+
+    .card title h2 {
+        font-size: 5.21vw !important;
+    }
+
+    .advantage h5 {
+     font-size: 2.02vw !important;
+    }
+
+    .tab__item h5 {
+        font-size: 2.34vw !important;
+    }
+
+    #api {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #api h2 {
+        font-size: 5.65vw !important;
+        text-align: center !important;
+    }
+
+    #uptime {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    .uptime_elem_title {
+        font-size: 4.17vw !important;
+    }
+
+    .uptime_elem_interest {
+        font-size: 3.13vw !important;
+    }
+
+    .uptime_elem_status {
+        font-size: 3.13vw !important;
+    }
+    
+    #uptime h2 {
+        font-size: 5.65vw !important;
+    }
+
+    #trialPeriod {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #trialPeriod h2 {
+        font-size: 6.25vw !important;
+        text-align: center !important;
+    }
+
+    #trialPeriod h4 {
+        font-size: 2.34vw !important;
+        text-align: center !important;
+        margin-bottom: 24px !important;
+    }
+
+    #trialPeriod .btn-primary {
+        margin: 0 auto !important;
+        display: block !important;
+    }
+
+    .trialPeriod__video-item {
+        margin-top: 40px !important;
+
+    }
+
+    #faq {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #faq h2 {
+        font-size: 5.65vw !important;
+        text-align: center !important;
+    }
+
+    .accordion-button {
+        font-size: 3.23vw !important;
+    }
+
+    .accordion-body p {
+         font-size: 2.02vw !important;
+    }
+
+    #contacts {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #contacts h2 {
+        font-size: 5.65vw !important;
+        text-align: center !important;
+    }
+
+    #contacts p {
+        font-size: 2.02vw !important;
+        text-align: center !important;
+    }
+
+    .footer__logo {
+        width: 17.14vw !important;
+        height: 6.12vw !important;
+    }
+
+    .footer__item h3 {
+        font-size: 2.42vw !important;
+    }
+
+    .footer__item a {
+        font-size: 1.81vw !important;
+    }
+
+    .allRights__item {
+         font-size: 1.41vw !important;
+    }
+
+    .headingContent {
+        font-size: 3.23vw !important;
+    }
+
+    .heading3yContent {
+        font-size: 2.02vw !important;
+    }
+
+    .pContent {
+       font-size: 1.61vw !important;
+    }
+
+    .aContent {
+        font-size: 1.61vw !important;
+    }
+
+
+
+}
+
+@media screen and (max-width: 767.98px) {
+
+    .btn-primary {
+        font-size: 16px !important;
+    }
+
+    .header__logo {
+        width: 22.14vw !important;
+        height: 6.12vw !important;
+    }
+
+    .nav {
+        display: none !important;
+    }
+
+    .btn-group__menu{
+        display: flex !important;
+    }
+
+    .btn-group {
+        display: none !important;
+    }
+
+    #main h1 {
+        font-size: 10.42vw !important;
+        text-align: center;
+        margin-top: 60px !important;
+    }
+
+    #main p {
+        font-size: 2.34vw !important;
+        text-align: center;
+        margin-bottom: 24px !important;
+    }
+
+    .btn-main {
+        margin: 0 auto !important;
+        display: block !important;
+    }
+
+    .main-img {
+        display: flex;
+        justify-content: center;
+    }
+
+    .main_img__item {
+        margin-top: 40px !important;
+        float: none !important;
+        position: absolute !important;
+        width: 59.07vw;
+
+    }
+
+    .advantages {
+        background: url("../img/bg__tablet.svg") no-repeat;
+        margin-top: 350px !important;
+    }
+
+    .advantages h3 {
+        font-size: 4.17vw !important;
+    }
+
+    .advantages p {
+        font-size: 2.08vw !important;
+    }
+    
+    .advantages__content {
+        flex-direction: column !important;
+        gap: 24px;
+    }
+
+    .advantage__icon {
+        width: 56px !important;
+        height: 56px !important;
+    }
+
+    #about .container {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #about h2 {
+        font-size: 6.25vw !important;
+        text-align: center !important;
+    }
+
+    .about__icons {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .about__item h3 {
+        font-size: 3.65vw !important;
+    }
+
+    .about__item p {
+        font-size: 2.34vw !important;
+        margin-top: 8px !important;
+        
+    }
+
+    #possibilities {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #price h2 {
+        font-size:  6.25vw !important;
+    }
+
+    .cards__item {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+
+    .card {
+        height: auto !important;
+    }
+
+    .card title h2 {
+        font-size: 5.21vw !important;
+    }
+
+    .advantage h5 {
+     font-size: 2.60vw !important;
+    }
+
+    .tab__item h5 {
+        font-size: 2.34vw !important;
+    }
+
+    #api {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #api h2 {
+        font-size: 6.94vw !important;
+        text-align: center !important;
+    }
+
+    #uptime {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    .uptime_elem_title {
+        font-size: 4.17vw !important;
+    }
+
+    .uptime_elem_interest {
+        font-size: 3.13vw !important;
+    }
+
+    .uptime_elem_status {
+        font-size: 3.13vw !important;
+    }
+    
+    #uptime h2 {
+        font-size: 6.25vw !important;
+    }
+
+    #trialPeriod {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #trialPeriod h2 {
+        font-size: 6.25vw !important;
+        text-align: center !important;
+    }
+
+    #trialPeriod h4 {
+        font-size: 2.34vw !important;
+        text-align: center !important;
+        margin-bottom: 24px !important;
+    }
+
+    #trialPeriod .btn-primary {
+        margin: 0 auto !important;
+        display: block !important;
+    }
+
+    .trialPeriod__video-item {
+        margin-top: 40px !important;
+
+    }
+
+    #faq {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #faq h2 {
+        font-size: 6.25vw !important;
+        text-align: center !important;
+    }
+
+    .accordion-button {
+        font-size: 3.65vw !important;
+    }
+
+    .accordion-body p {
+         font-size: 2.60vw !important;
+    }
+
+    #contacts {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #contacts h2 {
+        font-size: 6.25vw !important;
+        text-align: center !important;
+    }
+
+    #contacts p {
+        font-size: 2.34vw !important;
+        text-align: center !important;
+    }
+
+    .footer__logo {
+        width: 22.14vw !important;
+        height: 6.12vw !important;
+    }
+
+    .footer__item{
+        flex-direction: column !important;
+        gap: 32px !important;
+
+    }
+
+    .footer__item h3 {
+        font-size: 3.13vw !important;
+    }
+
+    .footer__item a {
+        font-size: 2.34vw !important;
+    }
+
+    .allRights {
+        flex-direction: column !important;
+        gap: 16px !important;
+         
+    }
+
+    .allRights__item {
+         font-size: 2.43vw !important;
+    }
+
+    .headingContent {
+        font-size: 4.17vw !important;
+    }
+
+    .heading3Content {
+        font-size: 3.13vw !important;
+    }
+
+    .pContent {
+       font-size: 2.08vw !important;
+    }
+
+    .aContent {
+        font-size: 2.08vw !important;
+    }
+
+}
+
+@media screen and (max-width: 575.98px) {
+
+    .btn-primary {
+        font-size: 16px !important;
+    }
+
+    .header__logo {
+        width: 26.22vw !important;
+        height: 7.29vw !important;
+    }
+
+    .nav {
+        display: none !important;
+    }
+
+    .btn-group {
+        display: none !important;
+    }
+
+    #main h1 {
+        font-size: 12.50vw !important;
+        text-align: center;
+        margin-top: 60px !important;
+    }
+
+    #main p {
+        font-size: 2.78vw !important;
+        text-align: center;
+        margin-bottom: 24px !important;
+    }
+
+    .btn-main {
+        margin: 0 auto !important;
+        display: block !important;
+    }
+
+    .main-img {
+        display: flex;
+        justify-content: center;
+    }
+
+    .main_img__item {
+        margin-top: 40px !important;
+        float: none !important;
+        position: absolute !important;
+        width: 91.15vw;
+    }
+
+    .advantages {
+        background: url("../img/bg__advantages-mobile.svg") no-repeat;
+        margin-top: 350px !important;
+    }
+
+    .advantages h3 {
+        font-size: 5.56vw !important;
+    }
+
+    .advantages p {
+        font-size: 2.78vw !important;
+    }
+    
+    .advantages__content {
+        flex-direction: column !important;
+        gap: 24px;
+    }
+
+    .advantage__icon {
+        width: 56px !important;
+        height: 56px !important;
+    }
+
+    #about .container {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #about h2 {
+        font-size: 6.94vw !important;
+        text-align: center !important;
+    }
+
+    .about__icons {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .about__item h3 {
+        font-size: 4.17vw !important;
+    }
+
+    .about__item p {
+        font-size: 2.78vw !important;
+        margin-top: 8px !important;
+    }
+
+    #possibilities {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #price h2 {
+        font-size: 6.94vw !important;
+    }
+
+    .cards__item {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+
+    .card {
+        height: auto !important;
+    }
+
+    .advantage h5 {
+     font-size: 3.13vw !important;
+    }
+
+    .tab__item h5 {
+        font-size: 3.13vw !important;
+    }
+
+    #api {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #api h2 {
+        font-size: 6.94vw !important;
+        text-align: center !important;
+    }
+
+    #uptime {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    .uptime_elem_title {
+        font-size: 4.17vw !important;
+    }
+
+    .uptime_elem_interest {
+        font-size: 3.13vw !important;
+    }
+
+    .uptime_elem_status {
+        font-size: 3.13vw !important;
+    }
+    
+    #uptime h2 {
+        font-size: 6.94vw !important;
+    }
+
+    #trialPeriod {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #trialPeriod h2 {
+        font-size: 6.94vw !important;
+        text-align: center !important;
+    }
+
+    #trialPeriod h4 {
+        font-size: 3.13vw !important;
+        text-align: center !important;
+        margin-bottom: 24px !important;
+    }
+
+    #trialPeriod .btn-primary {
+        margin: 0 auto !important;
+        display: block !important;
+    }
+
+    .trialPeriod__video-item {
+        margin-top: 40px !important;
+
+    }
+
+    #faq {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #faq h2 {
+        font-size: 6.94vw !important;
+        text-align: center !important;
+    }
+
+    .accordion-button {
+        font-size: 4.86vw !important;
+    }
+
+    .accordion-body p {
+         font-size: 3.47vw !important;
+    }
+
+    #contacts {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #contacts h2 {
+        font-size: 6.94vw !important;
+        text-align: center !important;
+    }
+
+    #contacts p {
+        font-size: 2.78vw !important;
+        text-align: center !important;
+    }
+
+    .footer__logo {
+        width: 30.38vw !important;
+        height: 8.51vw !important;
+    }
+
+    .footer__item{
+        flex-direction: column !important;
+
+    }
+
+    .footer__item h3 {
+        font-size: 4.17vw !important;
+    }
+
+    .footer__item a {
+        font-size: 3.13vw !important;
+    }
+
+    .allRights {
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+
+    .allRights__item {
+         font-size: 2.43vw !important;
+    }
+
+    .headingContent {
+        font-size: 5.56vw !important;
+    }
+
+    .heading3Content {
+        font-size: 4.17vw !important;
+    }
+
+    .pContent {
+       font-size: 2.78vw !important;
+    }
+
+    .aContent {
+        font-size: 2.78vw !important;
+    }
+
+}
+
+@media screen and (max-width: 374.98px) {
+    
+    .btn-primary {
+        font-size: 16px !important;
+    }
+
+    .btn-copy {
+        font-size: 14px !important;
+    }
+
+    .header__logo {
+        width: 40vw !important;
+        height: 15vw !important;
+    }
+
+    .nav {
+        display: none !important;
+    }
+
+    .btn-group {
+        display: none !important;
+    }
+
+    #main h1 {
+        font-size: 48px !important;
+        text-align: center;
+        margin-top: 40px !important;
+    }
+
+    #main p {
+        font-size: 16px !important;
+        text-align: center;
+        margin-bottom: 24px !important;
+    }
+
+    .btn-main {
+        margin: 0 auto !important;
+        display: block !important;
+    }
+
+    .main-img {
+        display: flex;
+        justify-content: center;
+    }
+
+    .main_img__item {
+        margin-top: 40px !important;
+        float: none !important;
+        position: absolute !important;
+        width: 91.15vw;
+    }
+
+    .advantages {
+        background-color: #3BD671 !important;
+        background-image: none !important;
+        margin-top: 350px !important;
+    }
+
+    .advantages h3 {
+        font-size: 24px !important;
+    }
+
+    .advantages p {
+        font-size: 16px !important;
+    }
+    
+    .advantages__content {
+        flex-direction: column !important;
+        gap: 24px;
+    }
+
+    .advantage__icon {
+        width: 56px !important;
+        height: 56px !important;
+    }
+
+    #about .container {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #about h2 {
+        font-size: 28px !important;
+        text-align: center !important;
+    }
+
+    .about__icons {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .about__item h3 {
+        font-size: 24px !important;
+    }
+
+    .about__item p {
+        font-size: 16px !important;
+        margin-top: 8px !important;
+    }
+
+    #possibilities {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #price h2 {
+        font-size: 28px !important;
+    }
+
+    .cards__item {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+
+    .card {
+        height: auto !important;
+    }
+
+    .advantage h5 {
+     font-size: 16px !important;
+    }
+
+    .tabBar {
+        gap: 8px !important;
+    }
+
+    .tab__item h5 {
+        font-size: 10px !important;
+    }
+
+    #api {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #api h2 {
+        font-size: 28px !important;
+        text-align: center !important;
+    }
+
+    #uptime {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    .uptime_elem_title {
+        font-size: 16px !important;
+    }
+
+    .uptime_elem_interest {
+        font-size: 12px !important;
+    }
+
+    .uptime_elem_status {
+        font-size: 12px !important;
+    }
+    
+    #uptime h2 {
+        font-size: 28px !important;
+    }
+
+    #trialPeriod {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #trialPeriod h2 {
+        font-size: 28px !important;
+        text-align: center !important;
+    }
+
+    #trialPeriod h4 {
+        font-size: 12px !important;
+        text-align: center !important;
+        margin-bottom: 32px !important;
+    }
+
+    #trialPeriod .btn-primary {
+        margin: 0 auto !important;
+        display: block !important;
+    }
+
+    .trialPeriod__video-item {
+        margin-top: 24px !important;
+
+    }
+
+    #faq {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #faq h2 {
+        font-size: 28px !important;
+        text-align: center !important;
+    }
+
+    .accordion-button {
+        font-size: 20px !important;
+    }
+
+    .accordion-body p {
+         font-size: 16px !important;
+    }
+
+    #contacts {
+        padding: 40px 0px 40px 0px !important;
+    }
+
+    #contacts h2 {
+        font-size: 28px !important;
+        text-align: center !important;
+    }
+
+    #contacts p {
+        font-size: 16px !important;
+        text-align: center !important;
+    }
+
+    .footer__logo {
+        width: 40vw !important;
+        height: 15vw !important;
+    }
+
+    .footer__item{
+        flex-direction: column !important;
+
+    }
+
+    .footer__item h3 {
+        font-size: 20px !important;
+    }
+
+    .footer__item a {
+        font-size: 18px !important;
+    }
+
+    .allRights {
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+
+    .allRights__item {
+         font-size: 14px !important;
+    }
+
+    .headingContent {
+        font-size: 24px !important;
+    }
+
+    .heading3Content {
+        font-size: 20px !important;
+    }
+
+    .pContent {
+       font-size: 16px !important;
+    }
+
+    .aContent {
+        font-size: 16px !important;
+    }
+
+    .btn-header-menu {
+        font-size: 18px !important;
+    }
+
+    .header__geo, .header__gmail, .header__tel h6 {
+        font-size: 14px !important;
+    }
+
+    .about__icons {
+         display: none !important;
+    }
+
+}

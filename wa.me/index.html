@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirect...</title>
+</head>
+<body style="margin: 0; padding: 5px;">
+<span id="span_debug">
+</span>
+<script>
+    let phone = undefined;
+    let text = undefined;
+    let accountid = undefined;
+    let span_debug_element = document.getElementById('span_debug');
+    let query = window.location.href.split('wa.me/?')[1];
+    let json = [];
+    for (const param of query.split('&')) {
+        let [field, value] = param.split('=');
+        value = decodeURIComponent(value);
+        if (field === 'phone')
+            phone = value;
+        else if (field === 'text')
+            text = value;
+        else if (field === 'accountid')
+            accountid = value;
+        else
+            json.push({
+                field: field,
+                value: value
+            })
+    }
+    let redirect_url = `https://wa.me/${phone}`;
+    span_debug_element.innerText = `Redirect: ${redirect_url}`;
+
+    sendUTM(accountid, phone, json);
+
+    function sendUTM(accountid, phone, json) {
+        let myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        let raw = JSON.stringify(json, null, 2);
+
+        let requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'manual'
+        };
+
+        fetch(`https://whatsapp.laboratorysales.ru/amocrm/accounts/${accountid}/utm/${phone}`, requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                let char = result.data.char;
+                console.log(char);
+                text = char + text;
+                window.location.href = `https://wa.me/${phone}?text=${text}`;
+            })
+            .catch(error => {
+                window.location.href = `https://wa.me/${phone}?text=${text}`;
+            });
+    }
+</script>
+</body>
+</html>

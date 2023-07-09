@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="71196f22-884f-41f8-ba4f-343126b6854f" name="Злоебучий Антон" url="https://leadsender.ru">
+        <fileTransfer rootFolder="/var/www/leadsender.ru/public_html" accessType="SFTP" host="62.113.105.226" port="22" sshConfigId="f2eb81fd-8ea7-4310-9afb-650f46898574" sshConfig="Злоебучий Антон">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
